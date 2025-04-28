@@ -39,7 +39,7 @@ async function getDynamicCategories(purposes: string[]): Promise<string[]> {
   Sadece bu formatta çıktı ver.
   
   Başla:
-  `;
+  `;/*
 
   const response = await cohere.generate({
     model: "command-r-plus",
@@ -101,7 +101,16 @@ async function getTitleForCategory(category: string): Promise<string> {
 
   return response.generations[0].text
     .trim()
-    .replace(/^["'\d\-\.\s]+|["'\s]+$/g, "");
+    .replace(/^["'\d\-\.\s]+|["'\s]+$/g, "");*/
+  return  [
+  'Zephyr RTOS',
+  'STM32',
+  'ESP32',
+  'LORA-WAN',
+  'CAN-BUS PROTOKOLÜ',
+  'Otomotiv Elektroniği',
+  'Endüstri 4.0',
+]
 }
 
 async function generateMarkdownPost(
