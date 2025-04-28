@@ -39,7 +39,7 @@ async function getDynamicCategories(purposes: string[]): Promise<string[]> {
   Sadece bu formatta çıktı ver.
   
   Başla:
-  `;/*
+  `;
 
   const response = await cohere.generate({
     model: "command-r-plus",
@@ -78,7 +78,17 @@ async function getDynamicCategories(purposes: string[]): Promise<string[]> {
     return ["general development", "web trends", "tech insights"];
   }
 
-  return cleanedLines;
+   return  [
+  'Zephyr RTOS',
+  'STM32',
+  'ESP32',
+  'LORA-WAN',
+  'CAN-BUS PROTOKOLÜ',
+  'Otomotiv Elektroniği',
+  'Endüstri 4.0',
+]
+
+//  return cleanedLines;
 }
 async function getTitleForCategory(category: string): Promise<string> {
   const prompt = `Sen deneyimli bir teknik blog yazarı ve yazılımcısın. '${category}' konusunda EN FAZLA 10 kelimelik, dikkat çekici, profesyonel, SEO uyumlu bir blog başlığı üret.
@@ -101,16 +111,8 @@ async function getTitleForCategory(category: string): Promise<string> {
 
   return response.generations[0].text
     .trim()
-    .replace(/^["'\d\-\.\s]+|["'\s]+$/g, "");*/
-  return  [
-  'Zephyr RTOS',
-  'STM32',
-  'ESP32',
-  'LORA-WAN',
-  'CAN-BUS PROTOKOLÜ',
-  'Otomotiv Elektroniği',
-  'Endüstri 4.0',
-]
+    .replace(/^["'\d\-\.\s]+|["'\s]+$/g, "");
+
 }
 
 async function generateMarkdownPost(
