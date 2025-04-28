@@ -3,16 +3,11 @@ dotenv.config();
 import { dailyContentBlast } from "./services/scheduler";
 
 const competencies = [
-  "Frontend Development (React, Angular, React Native,Next.js)",
-  "Backend Development (Node.js)",
-  "Fullstack Development",
-  "Microservices",
-  "Web Architecture",
-  "Cloud Services (AWS, Azure)",
-  "Prisma, MongoDB, PostgreSQL",
+  "Embedded Development (C, C++, Python)",
+  "Backend Development (Node.js)"
 ];
 
 dailyContentBlast(
-  ["Frontend Backend fullstack", "Modern web mimarisi"],
+  ["Embedded Systems development", "Internet of Things"],
   competencies
 );
