@@ -84,14 +84,12 @@ async function getDynamicCategories(purposes: string[]): Promise<string[]> {
   'ESP32',
   'LORA-WAN',
   'CAN-BUS PROTOKOLÜ',
-  'Otomotiv Elektroniği',
-  'Endüstri 4.0',
 ]
 
 //  return cleanedLines;
 }
 async function getTitleForCategory(category: string): Promise<string> {
-  const prompt = `Sen deneyimli bir teknik blog yazarı ve yazılımcısın. '${category}' konusunda EN FAZLA 10 kelimelik, dikkat çekici, profesyonel, SEO uyumlu bir blog başlığı üret.
+  const prompt = `Sen deneyimli bir teknik blog yazarı,Elektrik-Elektronik Mühendisi ve gömülü sistem mühendisisin. '${category}' konusunda EN FAZLA 10 kelimelik, dikkat çekici, profesyonel bir blog başlığı üret.
 
 - Başlık sade, akıcı ve merak uyandırıcı olsun.
 - Sadece 1 başlık üret, açıklama yapma.
@@ -126,17 +124,12 @@ Aşağıdaki başlığa göre yüksek kaliteli teknik blog yazısı yaz. Yazarı
 
 Kurallar:
 - Başlık zaten verildi. İçeriğe başlık EKLEME. İçerik SADECE giriş paragrafıyla başlamalı.
-- Markdown formatında yaz
-- Giriş: En az 2 paragraf, konunun önemi anlatılsın
+- Giriş: En az 1paragraf, konunun önemi anlatılsın
 - En az 3 alt başlık (150+ kelime): Teknik açıklama + örnek
-- En az 1 kod örneği (yorumlu, pratik)
-- **Kod Örneği**: Verilecek kod örnekleri yazarın yetkinliklerine uygun teknolojilerle (örneğin ${competencies.join(
-    ", "
-  )}) yazılmalı.
+- kod olmasın
 - En az 1 liste (madde işaretli veya numaralı)
 - Gerçek dünya senaryosu: Nerede kullanılır?
 - Sonuç: Özet ve öğrenilenler
-- SEO uyumlu başlık ve kelimeler kullan
 - Profesyonel ama sade anlatım
 
 ## ❌ YANLIŞ ÖRNEK
@@ -175,8 +168,8 @@ async function extractTagsAndSeries(
     
     Sadece geçerli bir JSON olarak ver. Örnek biçim:
     {
-      "tags": ["javascript", "web", "react"],
-      "series": "frontend gelişmeleri"
+      "tags": ["embedded systems", "can-bus", "iot"],
+      "series": "embedded linux"
     }
     
     YAZI:
@@ -247,10 +240,10 @@ Aşağıda bir blog yazısı markdown formatında verilmiştir. Bu yazıya dayan
 
 Metin şu kurallara uygun olmalı:
 
-🔹 Açılış paragrafı dikkat çekici ve çarpıcı olmalı. 🚀, 📢, 🔍 gibi emojilerle desteklenebilir.  
+🔹 Açılış paragrafı dikkat çekici ama kısa olmalı 
 🔹 Konu kısa, sade ve etkili biçimde özetlenmeli. Gereksiz detaylardan kaçınılmalı.  
-🔹 Yazı maksimum 2 paragraftan oluşmalı. Görsel olarak boşluklu ve okunabilir olmalı.  
-🔹 Liste içerik varsa 🟠, ✅, 🔸 gibi emojilerle yazılmalı.  
+🔹 Yazı maksimum 1 paragraftan oluşmalı. Görsel olarak boşluklu ve okunabilir olmalı.  
+🔹 
 🔹 Sonunda mutlaka bu satır yer almalı:
 👉 Yazının tamamı için: ${postUrl}  
 ${seriesNote}
