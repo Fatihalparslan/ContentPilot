@@ -10,7 +10,7 @@ async function getDynamicCategories(purposes: string[]): Promise<string[]> {
   const purposeText = purposes.join(", ");
 
   const prompt = `
-  Sen bir yazılım içerikleri danışmanısın.
+  Sen bir gömülü yazılım içerikleri danışmanısın.
   
   Aşağıdaki hedeflere yönelik teknik blog yazıları oluşturacağız:
   👉 ${purposeText}
@@ -26,9 +26,15 @@ async function getDynamicCategories(purposes: string[]): Promise<string[]> {
   - En az 3, en fazla 10 kategori üret.
   
   Örnek:
-  mobile devops
-  state management
-  cross-platform testing
+  Zephyr RTOS
+  NRF CONNECT SDK
+  STM32
+  ESP32
+  ESP-IDF
+  LORA
+  CAN BUS
+  LIN
+  AUTOMATIVE ELECTRONICS
   
   Sadece bu formatta çıktı ver.
   
